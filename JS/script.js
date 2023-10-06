@@ -15,22 +15,27 @@ createApp({
   methods: {
     getApi(){
 
-      axios
-          .get(this.apiUrl)
-          .then ((risposta) => {
-            console.log(risposta.data)
-            // aggiungo la mail alla lista mail
-            this.listaMail.push(risposta.data.response)
-          })
+      for (let i = 0; i < 10; i++) {
 
-          .catch((errore) => {
-            // per controllare eventuali errori li stampo in console
-            console.log(errore)
-          })
+        axios
+            .get(this.apiUrl)
+            .then ((risposta) => {
+              console.log(risposta.data)
+              // aggiungo la mail alla lista mail
+              this.listaMail.push(risposta.data.response)
+            })
 
-
+            .catch((errore) => {
+              // per controllare eventuali errori li stampo in console
+              console.log(errore)
+            })
+      }
     }
   },
+
+  mounted() {
+    this.getApi()
+  }
 
 
 }).mount("#app")
