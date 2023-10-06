@@ -19,11 +19,18 @@ createApp({
           .get(this.apiUrl)
           .then ((risposta) => {
             console.log(risposta.data)
-
+            // aggiungo la mail alla lista mail
+            this.listaMail.push(risposta.data.response)
           })
+
+          .catch((errore) => {
+            // per controllare eventuali errori li stampo in console
+            console.log(errore)
+          })
+
 
     }
   },
 
 
-}).mount('app')
+}).mount("#app")
