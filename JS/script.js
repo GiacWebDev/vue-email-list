@@ -15,6 +15,7 @@ createApp({
   methods: {
     getApi(){
 
+      // applico un ciclo for per ciclare fino a 10 mails
       for (let i = 0; i < 10; i++) {
 
         axios
