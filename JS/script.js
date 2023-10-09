@@ -9,6 +9,7 @@ createApp({
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       listaMail: [],
       mail: '',
+      limit: 10
     }
   },
 
@@ -16,7 +17,7 @@ createApp({
     getApi(){
 
       // applico un ciclo for per ciclare fino a 10 mails
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < this.limit; i++) {
 
         axios
             .get(this.apiUrl)

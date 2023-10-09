@@ -14,8 +14,14 @@
 <body>
 
   <div id="app">
+    
     <h1>Indirizzi Email</h1>
+    <h3 v-if="listaMail.length < limit">Loading ...</h3>
+    
+    <ul v-else>
       <li v-for="mails in listaMail">{{ mails }}</li>
+    </ul>
+
   </div>
 
   <script src="JS/script.js"></script>
